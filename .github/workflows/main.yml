@@ -73,4 +73,5 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             sudo docker pull holistic1/infra_home:latest
+            sudo docker stop $(sudo docker ps -a -q)
             sudo docker run --rm -d -p 5000:5000 holistic1/infra_home:latest
