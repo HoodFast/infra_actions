@@ -70,7 +70,6 @@ deploy:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
-        script: |
+        script: 
           sudo docker pull holistic1/infra_home
-          sudo docker stop $(sudo docker ps -a -q)
           sudo docker run --rm -d -p 5000:5000 holistic1/infra_home
